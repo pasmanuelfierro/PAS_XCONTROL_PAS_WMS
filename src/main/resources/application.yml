@@ -1,0 +1,11 @@
+spring:
+  main:
+    lazy-initialization: true
+  jackson:
+    property-naming-strategy: SNAKE_CASE
+server:
+  port: 3030
+
+xcontrol:
+  base-url: http://212.56.45.62:36594/colorada_api/api/xcontrol/
+  auth: Basic Y3Bzd2ViYXBwOndlYmFwcDEyMzox
