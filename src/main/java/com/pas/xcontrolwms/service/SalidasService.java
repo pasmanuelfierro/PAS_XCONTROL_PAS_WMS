@@ -13,16 +13,20 @@ public class SalidasService {
     private final XControlClient XControlClient;
 
     public SalidasService(XControlClient xControlClient) {
-
         this.XControlClient = xControlClient;
+    }
+
+    public void persistSalidas(XControlSalidasResponse xcontrolSalidasResponse) {
+
     }
 
     public XControlSalidasResponse getSalidas(XControlRequest xControlRequest) {
         try {
 
-            XControlSalidasResponse xControlSalidasResponse = XControlClient.salidasXControl(xControlRequest);
+            XControlSalidasResponse xcontrolSalidasResponse = XControlClient.salidasXControl(xControlRequest);
 
-            return xControlSalidasResponse;
+            persistSalidas(xcontrolSalidasResponse);
+            return xcontrolSalidasResponse;
         } catch (Exception e) {
             log.error("error uploadDocument");
             throw new RuntimeException(e);
