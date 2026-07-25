@@ -1,7 +1,7 @@
-package com.pas.xcontrolwms.scheduler;
+package com.pas.xcontrolwms.wms.scheduler;
 
-import com.pas.xcontrolwms.dto.xcontrol.XControlRequest;
-import com.pas.xcontrolwms.service.SalidasService;
+import com.pas.xcontrolwms.wms.service.ExplosiveRegistryService;
+import com.pas.xcontrolwms.xcontrolmapping.XControlRequest;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,8 +16,10 @@ import java.time.ZoneId;
 @Component
 @RequiredArgsConstructor
 public class JobScheduler {
+
     @Autowired
-    private SalidasService salidasService;
+    private ExplosiveRegistryService explosiveRegistryService;
+
 
     // @Scheduled(cron = "0 30 5,17 * * ?") //LOCAL
     // @Scheduled(cron = "0 */2 * * * ?") //LOCAL CADA 2 MIN
@@ -29,8 +31,12 @@ public class JobScheduler {
     public void getSalidasScheduler() {
         log.info("Inicio del getSalidasScheduler {}", OffsetDateTime.now());
         String fecha = LocalDate.now(ZoneId.of("America/Mexico_City")).toString();
-        XControlRequest fechaXControl = new XControlRequest(fecha);
-        salidasService.getSalidas(fechaXControl);
+
+        XControlRequest fechaXControl = new XControlRequest("2026-07-15");
+
+        explosiveRegistryService.getSalidas(fechaXControl);
+        explosiveRegistryService.getDevoluciones(fechaXControl);
+        explosiveRegistryService.getEntradas(fechaXControl);
 
         log.info("Termina del getSalidasScheduler {}", OffsetDateTime.now());
     }

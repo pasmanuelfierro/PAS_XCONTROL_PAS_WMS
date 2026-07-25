@@ -1,4 +1,4 @@
-package com.pas.xcontrolwms.config;
+package com.pas.xcontrolwms.wms.config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -9,7 +9,7 @@ import org.springframework.web.reactive.function.client.WebClient;
 @Configuration
 public class WebClientConfig {
 
-    @Value("${xcontrol.base-url}")
+    @Value("${xcontrol.base.url}")
     String XCONTROL_BASE_URL;
 
     @Value("${xcontrol.auth}")

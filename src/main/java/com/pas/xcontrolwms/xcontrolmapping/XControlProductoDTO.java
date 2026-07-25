@@ -1,4 +1,4 @@
-package com.pas.xcontrolwms.dto.xcontrol;
+package com.pas.xcontrolwms.xcontrolmapping;
 
 import lombok.Data;
 
@@ -12,5 +12,5 @@ public class XControlProductoDTO {
     private Integer cantidad;
 
     private List<XControlCajaDTO> cajas;
-    private List<String> folios;
+    /*private List<String> folios;*/
 }

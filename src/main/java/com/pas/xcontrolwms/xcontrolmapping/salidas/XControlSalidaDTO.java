@@ -1,6 +1,6 @@
-package com.pas.xcontrolwms.dto.xcontrol.salidas;
+package com.pas.xcontrolwms.xcontrolmapping.salidas;
 
-import com.pas.xcontrolwms.dto.xcontrol.XControlProductoDTO;
+import com.pas.xcontrolwms.xcontrolmapping.XControlProductoDTO;
 import lombok.Data;
 
 import java.util.List;

@@ -1,8 +1,9 @@
-package com.pas.xcontrolwms.client;
+package com.pas.xcontrolwms.wms.client;
 
-import com.pas.xcontrolwms.dto.xcontrol.XControlRequest;
-import com.pas.xcontrolwms.dto.xcontrol.entradas.XControlEntradasResponse;
-import com.pas.xcontrolwms.dto.xcontrol.salidas.XControlSalidasResponse;
+import com.pas.xcontrolwms.xcontrolmapping.XControlRequest;
+import com.pas.xcontrolwms.xcontrolmapping.devoluciones.XControlDevolucionResponse;
+import com.pas.xcontrolwms.xcontrolmapping.entradas.XControlEntradasResponse;
+import com.pas.xcontrolwms.xcontrolmapping.salidas.XControlSalidasResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
@@ -38,7 +39,7 @@ public class XControlClient {
         try {
 
             return xcontrolWebClient.get()
-                    .uri("compras/", xControlRequest.getFecha())
+                    .uri("compras/" + xControlRequest.getFecha())
                     .retrieve()
                     .bodyToMono(XControlEntradasResponse.class)
                     .block();
@@ -49,13 +50,13 @@ public class XControlClient {
     }
 
 
-    public XControlEntradasResponse devolucionXControl(XControlRequest xControlRequest) {
+    public XControlDevolucionResponse devolucionXControl(XControlRequest xControlRequest) {
         try {
 
             return xcontrolWebClient.get()
-                    .uri("devoluciones/", xControlRequest.getFecha())
+                    .uri("devoluciones/" + xControlRequest.getFecha())
                     .retrieve()
-                    .bodyToMono(XControlEntradasResponse.class)
+                    .bodyToMono(XControlDevolucionResponse.class)
                     .block();
         } catch (Exception e) {
             log.error("error devolucionXControl", e);

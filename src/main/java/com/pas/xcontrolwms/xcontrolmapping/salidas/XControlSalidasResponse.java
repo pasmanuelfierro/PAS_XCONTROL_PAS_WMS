@@ -1,4 +1,4 @@
-package com.pas.xcontrolwms.dto.xcontrol.salidas;
+package com.pas.xcontrolwms.xcontrolmapping.salidas;
 
 import lombok.Data;
 

@@ -1,4 +1,4 @@
-package com.pas.xcontrolwms.dto.xcontrol.devoluciones;
+package com.pas.xcontrolwms.xcontrolmapping.devoluciones;
 
 import lombok.Data;
 

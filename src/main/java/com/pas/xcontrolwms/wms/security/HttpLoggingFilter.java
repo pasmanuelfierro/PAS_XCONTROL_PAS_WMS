@@ -1,4 +1,4 @@
-package com.pas.xcontrolwms.security;
+package com.pas.xcontrolwms.wms.security;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
