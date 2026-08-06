@@ -7,7 +7,7 @@
 
     <groupId>com.pas.xcontrolwms</groupId>
     <artifactId>xcontrol-wms-connector</artifactId>
-    <version>1.0.0</version>
+    <version>green</version>
     <packaging>jar</packaging>
     <properties>
         <java.version>21</java.version>
